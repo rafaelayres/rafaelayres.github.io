@@ -1,0 +1,42 @@
+  <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="text" placeholder="Search Blog" ng-model="blogToSearch" class="form-control">
+          <button type="submit" class="btn btn-default" ng-click="searchBlog(blogToSearch)">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-9">
+      <div ng-show="searchResult === 'empty'"><h1>Pesquise um blog</h1></div>
+      <div ng-show="searchResult === 'notFound'"><h1>Blog {{errorBlog}} não encontrado {{teste}}</h1></div>
+      <div ng-show="searchResult === 'found'" class="well">
+        <img ng-src="{{blogAvatar}}"
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <div class="row">
+  
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" ng-repeat-start="like in likes">
+        <a ng-href="{{like.videosrc}}" download="{{like.videosrc}}"><img ng-src = "{{like.imgsrc}}" class="img-responsive"></a>
+        <button class="btn btn-default" ng-click="likePost(like)">Like</button>
+        <button class="btn btn-default" ng-click="dislikePost(like)">Dislike</button>
+        <span ng-if="like.liked">Liked!</span>
+      </div>
+      <div class="clearfix visible-xs-block" ng-if="$index%2==1"></div>
+      <div class="clearfix visible-sm-block hiddden-xs-block" ng-if="$index%3==2"></div>
+      <div class="clearfix visible-md-block visible-lg-block hidden-sm-block hidden-xs-block" ng-if="$index%4==3"></div>
+      <div class="clearfix" ng-if="$index%4==3"></div>
+      <div ng-repeat-end=""></div>
+    </div>
+  
+    <br>
+    <button class="btn btn-primary form-control" ng-click="getLikes(blogName,offset)">More</button>
+    {{blogName}}, {{offset}}
+  </div>
+</div>

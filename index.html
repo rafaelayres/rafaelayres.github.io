@@ -1,9 +1,81 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Page</title>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+
+<html lang="pt-br" ng-app="TumbViewer">
+<head>
+  <title>TumbViewer</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="style/bootstrap-theme.min.css">
+  
+  <!-- JQuery -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  
+  <!-- Angular JS -->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+<!--  <script src="js/angular.min.js"></script> -->
+  <script src="js/angular-route.min.js"></script>
+
+  
+  <script src="js/main.js"></script>
+  <script src="js/routeConfig.js"></script>
+  
+  <link rel="stylesheet" href="style/styles.css">
+  
+</head>
+
+<body ng-controller="mainCtrl">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-nav-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        
+        <a class="navbar-brand" href="#/">TumbViewer</a>
+      </div>
+      
+      <div class="collapse navbar-collapse" id="my-nav-collapse">
+      
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" ng-model="searchTerm" class="form-control" placeholder="Search Blog">
+          </div>
+          <button type="submit" ng-click="search(searchTerm)" class="btn btn-default">Search</button>
+        </form>
+      
+        <ul class="nav navbar-nav">
+          <li ng-class="{active: $route.current.$$route.activetab=='blog'}"><a href="#/" ng-click="">Blog</a></li>
+          <li ng-class="{active: $route.current.$$route.activetab=='likes'}"><a href="#likes">Likes</a></li>
+          <li ng-class="{active: $route.current.$$route.activetab=='similar'}"><a href="#similar">Similar</a></li>
+        </ul>
+      
+      </div>
+      
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div ng-view></div>
+  </div>
+  
+  <footer class="footer"><div class="container">@ 2016</div></footer>
+   
+</body>
 </html>

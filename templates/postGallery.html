@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" ng-repeat-start="like in $ctrl.likes">
+      <a ng-href="{{like.videosrc}}" download="{{like.videosrc}}"><img ng-src = "{{like.imgsrc}}" class="img-responsive"></a>
+      <button class="btn btn-default" ng-click="$ctrl.likePost(like)">Like</button>
+    </div>
+    <div class="clearfix visible-xs-block" ng-if="$index%2==1"></div>
+    <div class="clearfix visible-sm-block hiddden-xs-block" ng-if="$index%3==2"></div>
+    <div class="clearfix visible-md-block visible-lg-block hidden-sm-block hidden-xs-block" ng-if="$index%4==3"></div>
+    <div class="clearfix" ng-if="$index%4==3"></div>
+    <div ng-repeat-end=""></div>
+  </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        
+      </div>
+    </div>
+  </div>
+</div>

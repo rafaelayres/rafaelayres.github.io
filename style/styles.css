@@ -1,0 +1,17 @@
+body{
+  padding-top: 70px;
+}
+
+.postUL {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.postUL li{
+  list-style:none;
+  margin-bottom: 25px;
+}
+
+.postUL li img{
+  cursor: pointer;
+}
