@@ -393,7 +393,7 @@ app.factory("dataAPI",function($localStorage){
 
 app.factory("tumblrAPI",function($http){
     
-    var baseUrl = 'http://api.tumblr.com/v2/blog/';
+    var baseUrl = 'https://api.tumblr.com/v2/blog/';
     var apiKey = '?api_key=sNCvOfqUTzUJzBOViCbYfkaGeQaFAS4Q4XNtHMu8YPo6No3OiY';
     var blogBase = ".tumblr.com";
     var callback = "&callback=JSON_CALLBACK";
