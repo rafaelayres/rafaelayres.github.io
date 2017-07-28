@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="blog in similar|orderBy:'-percent'|limitTo:100">
+      <tr ng-repeat="blog in similar|orderBy:'-count'|limitTo:100">
         <td><a ng-href="{{blog.url}}">{{blog.name}}</a></td>
         <td>{{blog.percent*100|number:2}}</td>
         <td>{{blog.count}}</td>
