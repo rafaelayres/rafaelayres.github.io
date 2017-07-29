@@ -241,7 +241,7 @@ app.controller('similarCtrl',function($scope, $route, $localStorage, $window, da
       {
         tumblrAPI.getInfo(el.name)
         .success(function(data){
-          console.log(data.response.blog);
+          //console.log(data.response.blog);
           if(data.response.blog.share_likes){
             if(data.response.blog.likes > 0 && el.count >0){
               var blog = 
